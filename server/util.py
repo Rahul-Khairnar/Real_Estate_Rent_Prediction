@@ -49,5 +49,5 @@ def get_data_columns():
         
 if __name__ == '__main__':
     load_saved_artifacts()
-   # print(get_location_names())
+    print(get_location_names())
     print(get_estimated_rent("Lokhandwala Twp",1090,2,2))
