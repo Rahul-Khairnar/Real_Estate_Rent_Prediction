@@ -1,12 +1,14 @@
 ## Real Estate Rent Prediction - Project Overview
 
+![alt text](https://github.com/Rahul-Khairnar/Real_Estate_Rent_Prediction/blob/master/Photos/Web_application.PNG "Web Application")
+
 * Created a web application that takes some inputs like Locality, Number of bedrooms, Number of bathrooms, and the Area in square feet. 
 * The application is designed using HTML. CSS in the front end and Javascript, JQuery and Python Flask in the backend.
 * The model uses a RandomForestsRegresson() to predict the rent.
 
 ## Resources used and referred to
 
-* Languages used -
+* Languages used:-
     * Python
     * Javascript
     * JQuery
@@ -26,6 +28,10 @@
     * Number of bathrooms
     * Locality
     * Rent
+    
+    
+    ![alt text](https://github.com/Rahul-Khairnar/Real_Estate_Rent_Prediction/blob/master/Photos/required_df.PNG "Required Dataframe")
+
 
 * The dataset has about 34000 rows consisting of properties from various localities from across the various suburbs of Mumbai.
 * The rents start from as low as 7k and as high as 5 Lacs.
@@ -44,8 +50,24 @@ the localities with one property were converted to Other.
 ## Exploratory Data Analysis
 
 * Top localities with most number of properties.
+
+
+![alt text](https://github.com/Rahul-Khairnar/Real_Estate_Rent_Prediction/blob/master/Photos/localities_Explore.png "Localities Explore")
+
+
 * To check what is the total number of bathrooms and bedrooms in the properties available.
+
+    
+ ![alt text](https://github.com/Rahul-Khairnar/Real_Estate_Rent_Prediction/blob/master/Photos/bathroom_explore.png "Bathroom Explore")
+
+ ![alt text](https://github.com/Rahul-Khairnar/Real_Estate_Rent_Prediction/blob/master/Photos/bedroom_explore.png "Bedroom Explore")
+
+
 * Heat map to check for correlation between Area, Number of bedrooms, Number of bathrooms and prices.
+
+
+ ![alt text](https://github.com/Rahul-Khairnar/Real_Estate_Rent_Prediction/blob/master/Photos/heat_map.png "Bathroom Explore")
+
 
 ## Model Building
 
@@ -58,7 +80,7 @@ the localities with one property were converted to Other.
 
 * I used GridSearchCV to check which algorithm performs the best, and at what parameters it performs the best.
 * From the results obtained, Random Forest performed the best followed by Linear Regression. Decision Tree performed the worst with accuracy of just 40%.
-* Random forests performed best at n_estimators = 200, criterion = "mse".
+* Random forests performed best at n_estimators = 200, criterion = "mse" with an accuracy of 84%.
 
 ## Flask Server
 
@@ -78,6 +100,9 @@ the localities with one property were converted to Other.
 ## Productionization - Web Application
 
 * Mumbai Property Rent Predictor is developed using HTML, CSS, Javascript and JQuery.
-* The website UI is very simply and easy to use.
+* The web application UI is very simply and easy to use.
+* Once the features of the property are entered by the user and the estimate rent button is pressed, the parameters are sent to the predict_home_rent() function using the flask server. The function first gets the list of all locations, the matches the users location with the locations list and returns the estimated results.
+* The response time is very fast and also predicts the rent very close to the actual rent. 
+* It can be tested by taking some random property from magicbricks.com or commonfloor.com etc and predicting its rent using the application. The predicted rent is quite close to the rent mentioned on the website with a difference of about +-10%.
 
 
